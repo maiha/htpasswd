@@ -133,7 +133,7 @@ module Htpasswd
         digest = digest_algorithm.hexdigest(sources * ':')
         logger.debug("[DIGEST] %s => : %s" % [name, digest])
         return digest
-      end        
+      end
 
       ######################################################################
       ### Aliases

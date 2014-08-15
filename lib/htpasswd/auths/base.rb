@@ -30,8 +30,8 @@ module Htpasswd
       [
        'X-HTTP_AUTHORIZATION',          # for Apache/mod_rewrite
        'REDIRECT_X_HTTP_AUTHORIZATION', # for Apache2/mod_rewrite
-       'Authorization',                 # for Apace/mod_fastcgi with -pass-header Authorization 
-       'HTTP_AUTHORIZATION',            # this is the regular location 
+       'Authorization',                 # for Apace/mod_fastcgi with -pass-header Authorization
+       'HTTP_AUTHORIZATION',            # this is the regular location
       ].map{|name| hash[name]}.compact.first
     end
 
@@ -41,7 +41,7 @@ module Htpasswd
 
     class Base
       delegate :logger, :to=>"ActionController::Base"
-      
+
       class << self
         def parse(data)
           raise NotImplementedError, "subclass responsibility"
